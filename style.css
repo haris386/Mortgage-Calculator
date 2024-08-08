@@ -1,0 +1,86 @@
+body {
+  background-color: #e3f4fc;
+}
+
+.mainbox {
+  width: 75%;
+  margin: 5% auto;
+}
+
+.leftside {
+  background-color: white;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.rightside {
+  background-color: #133040;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 60px;
+  padding: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+}
+
+.rightside img {
+  max-width: 100%;
+  height: auto;
+}
+
+.rightside span {
+  display: block;
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+.mortgage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mortgage-header h3 {
+  margin: 0;
+}
+
+.mortgage-header #clearbtn {
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.input-group-text {
+  background-color: #e9ecef;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+button {
+  background-color: #dadb2f;
+  padding: 3%;
+  margin-top: 10px;
+  color: rgb(67, 62, 86);
+  border: none;
+  border-radius: 50px;
+  width: 60%;
+  font-weight: bold;
+}
+
+.form-check-input {
+  margin-right: 10px;
+}
+
+.form-check-label {
+  margin: 0;
+}

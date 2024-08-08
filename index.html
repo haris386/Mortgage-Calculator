@@ -14,94 +14,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <style>
-      body {
-        background-color: #e3f4fc;
-      }
-
-      .mainbox {
-        width: 75%;
-        margin: 5% auto;
-      }
-
-      .leftside {
-        background-color: white;
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
-        padding: 3%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-
-      .rightside {
-        background-color: #133040;
-        border-top-right-radius: 20px;
-        border-bottom-right-radius: 20px;
-        border-bottom-left-radius: 60px;
-        padding: 3%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-        color: white;
-      }
-
-      .rightside img {
-        max-width: 100%;
-        height: auto;
-      }
-
-      .rightside span {
-        display: block;
-        margin-top: 20px;
-        font-size: 1.2em;
-      }
-
-      .mortgage-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .mortgage-header h3 {
-        margin: 0;
-      }
-
-      .mortgage-header #clearbtn {
-        cursor: pointer;
-        color: #007bff;
-        text-decoration: underline;
-      }
-
-      .input-group-text {
-        background-color: #e9ecef;
-      }
-
-      .input-group {
-        margin-bottom: 1rem;
-      }
-
-      button {
-        background-color: #dadb2f;
-        padding: 3%;
-      margin-top: 10px;
-        color: rgb(67, 62, 86);
-        border: none;
-        border-radius: 50px;
-        width: 60%;
-        font-weight: bold;
-      }
-
-      .form-check-input {
-        margin-right: 10px;
-      }
-
-      .form-check-label {
-        margin: 0;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="container-fluid mainbox">
@@ -203,53 +116,11 @@
       </div>
     </div>
 
+    <script src="app.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-
-    <script>
-      function clearALL() {
-        document.getElementById("ma").value = "";
-        document.getElementById("mt").value = "";
-        document.getElementById("mr").value = "";
-        const mortgageType = document.querySelector('input[name="mortgageType"]:checked');
-        if (mortgageType) mortgageType.checked = false;
-        document.getElementById("monthlyRepayment").innerText = "Results shown here";
-        document.getElementById("totalRepayment").innerText =
-          'Complete the form and click "calculate repayments" to see what your monthly repayments would be.';
-      }
-
-      function calculateRepaymentMortgage(ma, mt, annualInterestRate) {
-        let n = mt * 12;
-        let r = annualInterestRate / 100 / 12;
-
-        let M = (ma * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
-        let totalRepayment = M * n;
-
-        return {
-          monthlyRepayment: M,
-          totalRepayment: totalRepayment,
-        };
-      }
-
-      function calculateMortgage() {
-        let ma = parseFloat(document.getElementById("ma").value);
-        let mt = parseInt(document.getElementById("mt").value);
-        let mr = parseFloat(document.getElementById("mr").value);
-        let mortgageType = document.querySelector('input[name="mortgageType"]:checked').value;
-
-        let result;
-        if (mortgageType === "repayment") {
-          result = calculateRepaymentMortgage(ma, mt, mr);
-        } else {
-          // Handle interest-only calculation if needed
-        }
-
-        document.getElementById("monthlyRepayment").innerText = `£${result.monthlyRepayment.toFixed(2)}`;
-        document.getElementById("totalRepayment").innerText = `£${result.totalRepayment.toFixed(2)}`;
-      }
-    </script>
   </body>
 </html>
